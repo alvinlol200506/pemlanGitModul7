@@ -1,11 +1,12 @@
 public abstract class Kue {
-    private String nama;
-    private double harga;
+    protected String nama;
+    protected double harga;
 
-    public String getNama(){
-        return this.nama;
+
+    public Kue (String nama, double harga){
+        this.nama = nama;
+        this.harga = harga;
     }
-
 
     public abstract double hitungHarga();
 
