@@ -25,5 +25,64 @@ public class PemdasParktikumModul7 {
         daftarKue[19] = new KueJadi("Red Velvet", 240000, 1);
 
 
+        System.out.println("\nA:");
+        // a. Tampilkan semua kue dan jenisnya
+        for (int i = 0; i < daftarKue.length; i++) {
+            System.out.println(daftarKue[i].toString());
+
+
+            if (daftarKue[i] instanceof KuePesanan) {
+                System.out.println("Jenis: Kue Pesanan\n");
+            } else if (daftarKue[i] instanceof KueJadi) {
+                System.out.println("Jenis: Kue Jadi\n");
+            }
+        }
+
+        System.out.println("\nB:");
+        // b. Total harga semua kue
+        double totalHarga = 0;
+        for (int i = 0; i < daftarKue.length; i++) {
+            totalHarga += daftarKue[i].hitungHarga();
+        }
+        System.out.println("Total harga semua kue: " + totalHarga);
+
+        System.out.println("\nC:");
+        // c. Total harga & berat KuePesanan
+        double totalHargaPesanan = 0;
+        double totalBerat = 0;
+        for (int i = 0; i < daftarKue.length; i++) {
+            if (daftarKue[i] instanceof KuePesanan) {
+                totalHargaPesanan += daftarKue[i].hitungHarga();
+                totalBerat += ((KuePesanan) daftarKue[i]).getBerat();
+            }
+        }
+        System.out.println("Total harga KuePesanan: " + totalHargaPesanan);
+        System.out.println("Total berat KuePesanan: " + totalBerat);
+
+        System.out.println("\nD:");
+        // d. Total harga & jumlah KueJadi
+        double totalHargaJadi = 0;
+        double totalJumlah = 0;
+        for (int i = 0; i < daftarKue.length; i++) {
+            if (daftarKue[i] instanceof KueJadi) {
+                totalHargaJadi += daftarKue[i].hitungHarga();
+                totalJumlah += ((KueJadi) daftarKue[i]).getJumlah();
+            }
+        }
+        System.out.println("Total harga KueJadi: " + totalHargaJadi);
+        System.out.println("Total jumlah KueJadi: " + totalJumlah);
+
+        System.out.println("\nE:");
+        // e. Kue dengan harga tertinggi
+        Kue kueTermahal = null;
+        for (int i = 0; i < daftarKue.length; i++) {
+                if (kueTermahal == null || daftarKue[i].hitungHarga() > kueTermahal.hitungHarga()) {
+                    kueTermahal = daftarKue[i];
+                }
+        }
+
+        System.out.println("Kue dengan harga tertinggi");
+        System.out.println(kueTermahal.toString());
+
     }
 }
