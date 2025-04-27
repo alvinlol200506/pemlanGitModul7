@@ -1,7 +1,7 @@
 public class KueJadi extends Kue { // anak dari kelas Kue
     private double jumlah; // variabel baru khusus kelas KueJadi
 
-    public KueJadi(String nama, double harga, double jumlah){ // setter dengan variabel baru yaitu jumlah
+    public KueJadi(String nama, double harga, double jumlah) { // setter dengan variabel baru yaitu jumlah
         super(nama, harga); // ini dikerjakan ibu kelasnya
         this.jumlah = jumlah; // setter variabel jumlah kuenya
     }
